@@ -70,6 +70,7 @@
 
     <script>
         var whoseTurn = "X";
+        var isgamedone = false;
         function showrestart(params) {
             var x = document.getElementById("btrestart");
             x.style.display = "block";
@@ -129,6 +130,21 @@
                 && document.getElementById("b20").innerHTML == document.getElementById("b11").innerHTML) {
                 alertwinne("Winner is " + whoseTurn);
             }
+
+            if (!isgamedone 
+            && document.getElementById("b00").innerHTML != "" 
+            && document.getElementById("b01").innerHTML != ""
+            && document.getElementById("b02").innerHTML != ""
+            && document.getElementById("b10").innerHTML != ""
+            && document.getElementById("b11").innerHTML != ""
+            && document.getElementById("b12").innerHTML != ""
+            && document.getElementById("b20").innerHTML != ""
+            && document.getElementById("b21").innerHTML != ""
+            && document.getElementById("b22").innerHTML != ""
+            ) {
+                console.log("im in the if block");
+                alerttttdraw()
+            }
         }
         function alertwinne() {
             isgamedone = true;
@@ -139,7 +155,11 @@
         }
 
         function alerttttdraw(params) {
-            
+            isgamedone = true;
+            document.getElementById("final_message").innerHTML = "alertttt youre game is drawed";
+            document.getElementById("board").style.display= "none";
+            document.getElementById("feedback").style.display = "block";
+            showrestart()
         }
         function markTheBox(id) {
             document.getElementById("intro").style.display = "none";
