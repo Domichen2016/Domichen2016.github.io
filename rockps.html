@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper cut your scissors</title>
+    <style>
+        h1 {
+            font-size: 50px;
+        }
+        #p1 {
+            position: absolute;
+            left: 20%;
+        }
+        #p2 {
+            position: absolute;
+            left: 70%;
+        }
+        #leftpic {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 25%;
+            left: 10%;
+        }
+        #rightpic{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 60%;
+            top: 25%;
 
+        }
+    </style>
+    <script>
+        var leftChoice;
+        var rightChoice;
+        document.addEventListener('keyup', function(event){     
+            console.log(event.key);
+            if (event.key == "q") {
+                leftChoice = "rock"
+            } else if (event.key == "w"){
+                leftChoice = "paper"
+            } else if (event.key == "e") {
+                leftChoice = "scissor"
+            } else if (event.key == "i") {
+                rightChoice = "rock"
+            } else if (event.key == "o"){
+                rightChoice = "paper"     
+            } else if (event.key == "p") {
+                rightChoice = "scissor"
+            }
+
+            checkwinne()
+        }); 
+
+
+        function checkwinne() {
+            console.log("check" + leftChoice + rightChoice)
+            if (leftChoice=="rock" && rightChoice=="rock") {
+                alert("draw")
+            }
+            if (leftChoice=="scissor" && rightChoice=="scissor") {
+             alert("draw")   
+            }
+            if  (leftChoice=="paper"  && rightChoice=="paper") {
+             alert("draw")
+            }
+            if  (leftChoice=="rock"   && rightChoice=="scissor"){
+             alert("player1wins")
+            }
+            if  (leftChoice=="rock"   && rightChoice=="paper"){
+             alert("player2wins")
+            }
+            if  (leftChoice=="paper"   && rightChoice=="rock"){
+             alert("player1wins")
+            }
+            if  (leftChoice=="paper"   && rightChoice=="scissor"){
+             alert("player2wins")
+            }
+            if  (leftChoice=="scissor"   && rightChoice=="rock"){
+             alert("player2wins")
+            }
+            if  (leftChoice=="scissor"   && rightChoice=="paper"){
+             alert("player1wins")
+            }
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+   <h1 id="p1">player1</h1> 
+   <h1 id="p2">player2</h1>
+   <img id="leftpic" src="./cloud.jpeg" alt="">
+   <img id="rightpic" src="./cloud.jpeg" alt="">
+</body>
+</html>
