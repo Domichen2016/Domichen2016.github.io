@@ -31,6 +31,14 @@
             top: 25%;
 
         }
+
+        #btrestart{
+            position: absolute;
+            top: 800px;
+            left: 500px;
+            font-size: 70px;
+            display: none;
+        }
     </style>
     <script>
         var leftChoice;
@@ -131,9 +139,10 @@
             }
 
             
-            //showFeedbackAndRestart()
-
-        }
+            showFeedbackAndRestart()
+             
+        } 
+            
 
         function imagesL(newImageName) {
             document.getElementById("leftpic").src = newImageName;
@@ -145,11 +154,17 @@
         }
 
         function showFeedbackAndRestart() {
-            document.getElementById('p1').style.display = "none"
-            document.getElementById('p2').style.display = "none"
-            document.getElementById('leftpic').style.display = "none"
-            document.getElementById('rightpic').style.display = "none"
+            // document.getElementById('p1').style.display = "none"
+            // document.getElementById('p2').style.display = "none"
+            // document.getElementById('leftpic').style.display = "none"
+            // document.getElementById('rightpic').style.display = "none"
 
+            document.getElementById("btrestart").style.display = "block";
+          
+        }
+
+        function refreshTheGame() {
+            window.location.reload();
         }
 
 
@@ -161,5 +176,6 @@
    <h1 id="p2">player2</h1>
    <img id="leftpic" src="./cloud.jpeg" alt="">
    <img id="rightpic" src="./cloud.jpeg" alt="">
+   <div id="btrestart" onclick="refreshTheGame()">click here to play again</div>
 </body>
 </html>
