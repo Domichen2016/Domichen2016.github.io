@@ -58,32 +58,97 @@
         function checkwinne() {
             console.log("check" + leftChoice + rightChoice)
             if (leftChoice=="rock" && rightChoice=="rock") {
-                alert("draw")
+                setTimeout(() => {
+                    alert("draw")
+                }, 200);
+                
+                imagesL("rock.png")
+                imagesR("rock.png")
             }
             if (leftChoice=="scissor" && rightChoice=="scissor") {
-             alert("draw")   
+                setTimeout(() => {
+                    alert("draw")
+                }, 200);
+             
+             imagesL("scissors.jpg")
+             imagesR("scissors.jpg")
             }
             if  (leftChoice=="paper"  && rightChoice=="paper") {
-             alert("draw")
+                setTimeout(() => {
+                    alert("draw")
+                }, 200);
+             
+             imagesL("paper.jpg")
+             imagesR("paper.jpg")
             }
             if  (leftChoice=="rock"   && rightChoice=="scissor"){
-             alert("player1wins")
+             
+             setTimeout(() => {
+                alert("player1wins")
+                }, 200);
+             imagesL("rock.png")
+             imagesR("scissors.jpg") 
             }
             if  (leftChoice=="rock"   && rightChoice=="paper"){
-             alert("player2wins")
+             setTimeout(() => {
+                alert("player2wins")   
+                }, 200);
+
+             imagesL("rock.png")
+             imagesR("paper.jpg")
             }
             if  (leftChoice=="paper"   && rightChoice=="rock"){
-             alert("player1wins")
+             
+             setTimeout(() => {
+                alert("player1wins")
+                }, 200);
+             imagesL("paper.jpg")
+             imagesR("rock.png")
             }
             if  (leftChoice=="paper"   && rightChoice=="scissor"){
-             alert("player2wins")
+             
+             setTimeout(() => {
+                alert("player2wins")
+                }, 200);
+             imagesL("paper.jpg")
+             imagesR("scissors.jpg")
             }
             if  (leftChoice=="scissor"   && rightChoice=="rock"){
-             alert("player2wins")
+             
+             setTimeout(() => {
+                alert("player2wins")
+                }, 200);
+             imagesL("scissors.jpg")
+             imagesR("rock.png")
             }
             if  (leftChoice=="scissor"   && rightChoice=="paper"){
-             alert("player1wins")
+             
+             setTimeout(() => {
+                alert("player1wins")
+                }, 200);
+             imagesL("scisors.jpg")
+             imagesR("paper.jpg")
             }
+
+            
+            //showFeedbackAndRestart()
+
+        }
+
+        function imagesL(newImageName) {
+            document.getElementById("leftpic").src = newImageName;
+  
+        }
+
+        function imagesR(newImageName) {
+            document.getElementById("rightpic").src = newImageName;
+        }
+
+        function showFeedbackAndRestart() {
+            document.getElementById('p1').style.display = "none"
+            document.getElementById('p2').style.display = "none"
+            document.getElementById('leftpic').style.display = "none"
+            document.getElementById('rightpic').style.display = "none"
 
         }
 
